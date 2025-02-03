@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Courses - Zere Mukanova</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Courses</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <ol>
+            <li><a href="#computer_science">Computer Science Courses</a></li>
+            <li><a href="#online_courses">Online Courses</a></li>
+        </ol>
+
+        <section id="computer_science">
+            <h2>Computer Science Courses</h2>
+            <details>
+                <summary>Theory</summary>
+                <dl>
+                    <dt><dfn>Principles of Software Engineering (CSE 110)</dfn></dt>
+                    <dd>Emphasizes group work and the use of software engineering techniques to develop user-oriented software. <abbr title="Software Engineering">SE</abbr> is not about coding alone; it's about creating solutions.</dd>
+                </dl>
+            </details>
+            <details>
+                <summary>Systems</summary>
+                <dl>
+                    <dt>Operating Systems</dt>
+                    <dd>A deep dive into how operating systems work, including process management, memory management, and file systems.</dd>
+                </dl>
+            </details>
+            <details>
+                <summary>Applications</summary>
+                <dl>
+                    <dt>Frontend Development</dt>
+                    <dd>Focuses on building accessible and responsive user interfaces using technologies like HTML, CSS, and JavaScript.</dd>
+                    <dt>Backend Development</dt>
+                    <dd>Covers server, database, and application logic development crucial for powering complex websites.</dd>
+                </dl>
+            </details>
+        </section>
+
+        <section id="online_courses">
+            <h2>Online Courses</h2>
+            <dl>
+                <dt>eCornell</dt>
+                <dd>Certificates in Machine Learning Foundations</dd>
+            </dl>
+        </section>
+
+        <fieldset>
+            <legend>Lab Section</legend>
+            <label for="experiment">Unused HTML tags:</label>
+            <select id="experiment" name="experiment">
+                <optgroup label="Tags for Text">
+                    <option value="strong"><b>Strong</b></option>
+                    <option value="em"><em>Emphasized</em></option>
+                    <option value="code">Code</option>
+                </optgroup>
+            </select>
+            <textarea rows="4" placeholder="Test out your HTML here!"></textarea>
+        </fieldset>
+
+        <canvas ></canvas>
+        <svg>
+            <circle/>
+        </svg>
+    </main>
+    <noscript>Your browser does not support JavaScript!</noscript>
+</body>
+</html>
