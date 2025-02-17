@@ -4,7 +4,7 @@
         <title>Main Page - About Me</title>
         <meta charset="UTF-8">
         <script></script>
-       <link rel="stylesheet" href="styles.css">
+       <link href="style.css" rel="stylesheet" type = "text/css"/>
        <style></style>
     </head>
 
@@ -12,7 +12,7 @@
     
         <header>
             <h1>About Me</h1>
-            <nav>
+            <nav class="navbar">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="resume.html">Resume</a></li>
@@ -25,27 +25,33 @@
         </header>
 
         <main>
+            <!-- left container-->
+            <div class="content">
+                <hgroup>
+                    <h2>Hello, I'm Zere! I'm a Computer Science student at UCSD</h2>
+                    <span style="font-weight: normal;"><i>Name Pronunciation:</i>
+                        <audio id = "audioPronounce" controls>
+                            <source src="path_to_audio.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element. Written pronunciation: Zee-ree
+                        </audio>
 
-            <hgroup>
-                <h2>Hello, I'm Zere! <span style="font-weight: normal;"><i>Pronunciation:</i>
-                    <audio controls>
-                        <source src="path_to_audio.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element. Written pronunciation: Zee-ree
-                    </audio>
-                </span> 
-                I'm a Computer Science student at UCSD!
-                </h2>
-            
-            </hgroup>
-            <p>Welcome to my personal portfolio website! Here, you can find more about my career journey, the projects I've worked on, and more.</p>
-
-            <figure>
-                <img src="/Media/Images/Headshot.jpg-.JPG" alt="A headshot of me">
-                <figcaption>This is a headshot that was taken September 2023. It was one of the activities coordinatoors of the Transfer Prep program planned at UCSD. The program was intended for incoming transfer engineering students to get familiar with UCSD and build professional networks!</figcaption>
-            </figure>
-            
-
+                        <label for="audioPronounce" class="audio-button"></label>
+                    </span> 
+                </hgroup>
+                <p>Welcome to my personal portfolio website! Here, you can find more about my career journey, the projects I've worked on, and more.</p>
+            </div>
+        
+            <!--right container -->
+            <div class="media-container">
+                <figure>
+                    <img src="/Media/Images/Headshot.jpg-.JPG" alt="A headshot of me">
+                    <figcaption>
+                        This is a headshot that was taken September 2023. It was one of the activities coordinators of the Transfer Prep program planned at UCSD. The program was intended for incoming transfer engineering students to get familiar with UCSD and build professional networks!
+                    </figcaption>
+                </figure>
+            </div>
         </main>
+        
 
         <footer>
             <address>

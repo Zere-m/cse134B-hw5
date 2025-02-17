@@ -1,0 +1,150 @@
+/*wildcard applies to all */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #f298e3af; 
+    padding: 15px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+
+main {
+    display: flex;
+    justify-content: space-between; 
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+hgroup {
+   
+    max-width: 100%;
+}
+
+hgroup h2 {
+    font-size: 28px;
+    line-height: 1.4;
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+    margin-top: 80px;
+}
+
+.content {
+    flex: 1; 
+    max-width: 50%;
+}
+
+.media-container {
+    flex: 1; 
+    max-width: 50%;
+    display: flex;
+    justify-content: center; 
+}
+
+
+figure {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+    max-width: 100%;
+}
+
+figure img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+figcaption {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+    max-width: 90%;
+}
+
+/* responsive design */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    hgroup, figure {
+        max-width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+footer{
+    text-align: center;
+}
+
+/* hiding original because its too big */
+#audioPronounce {
+    display: none;
+}
+
+
+.audio-button {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #333; 
+    border-radius: 40%; 
+    position: relative;
+    cursor: pointer;
+}
+
+.audio-button::before {
+    content: "▶"; 
+    font-size: 20px;
+    color: rgb(213, 145, 210);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.audio-button:hover {
+    background-color: #555;
+}
