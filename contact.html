@@ -26,16 +26,24 @@
             <hr>
             <h2>Send me a message:</h2>
             <form action="https://httpbin.org/post" method="post" enctype="text/plain">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <label for="name">Name:
+                    <input type="text" id="name" name="name" required>
+                </label>
+            
+                <label for="email">Email:
+                    <input type="email" id="email" name="email" required>
+                </label>
+                
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="comment">Comment:</label>
-                <textarea id="comment" name="comment" rows="4" required></textarea>
-
+                <label for="comment">Comment:
+                    <textarea id="comment" name="comment" rows="4" required></textarea>
+                </label>
+                
                 <input type = "hidden" name = "possible_bot" value = "true">
+
+                <output id="error" aria-live="assertive"></output>
+                <output id="info" aria-live="polite"></output>
+
                 <button type="submit">Send</button>
             </form>
             
