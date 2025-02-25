@@ -140,3 +140,11 @@ dialog {
         max-width: 90%;
     }
 }
+
+input:invalid{
+    border: 1px solid red;
+}
+
+input:valid{
+    border: 1px solid black;
+}
