@@ -47,6 +47,7 @@
                 value: `${comment.value.length} characters`,
                 timestamp: Date.now()
             }
+            form_errors.push(errorDetails);
         }
         else{
             comment.setCustomValidity("");
@@ -57,6 +58,13 @@
 
         if(comment.validity.tooLong){
             comment.setCustomValidity("Message too long, I am expecting 1000 characters at most!");
+            let errorDetails = {
+                field: 'comment',
+                error: 'input too long',
+                value: `${comment.value.length} characters`,
+                timestamp: Date.now()
+            }
+            form_errors.push(errorDetails);
         }
         else{
             comment.setCustomValidity("");
@@ -80,6 +88,14 @@
                 error.textContent = "";
                 error.classList.remove('fade');
             },1500); //because 1.5s is the duration of the fade animation
+
+            let errorDetails = {
+                field: 'comment',
+                error: 'illegal character typed',
+                character: comment.value[comment.value.length-1],
+                timestamp: Date.now()
+            }
+            form_errors.push(errorDetails);
         }
         else{
             comment.setCustomValidity("");
@@ -109,6 +125,7 @@
     
     form.addEventListener("submit", (event) => {
         document.getElementById('form-errors').value = JSON.stringify(form_errors);
+        console.log(form_errors);
     });
     </script>
 </head>
