@@ -73,13 +73,13 @@
             if(email.validity.typeMismatch){
                 email.setCustomValidity("I am expecting a valid email address!");
     
-                let errorDetails = {
+               /* let errorDetails = {
                     field: 'email',
                     error: 'illegal character typed',
                     value: email.value,
                     timestamp: Date.now()
                 }
-                form_errors.push(errorDetails);
+                form_errors.push(errorDetails);*/
             }
             else{
                 email.setCustomValidity("");
@@ -90,13 +90,13 @@
     
             if(comment.validity.tooShort){
                 comment.setCustomValidity("Message too short, I am expecting at least 20 characters!");
-                let errorDetails = {
+              /* let errorDetails = {
                     field: 'comment',
                     error: 'input too short',
                     value: `${comment.value.length} characters`,
                     timestamp: Date.now()
                 }
-                form_errors.push(errorDetails);
+                form_errors.push(errorDetails);*/
             }
             else{
                 comment.setCustomValidity("");
@@ -107,13 +107,13 @@
     
             if(comment.validity.tooLong){
                 comment.setCustomValidity("Message too long, I am expecting 1000 characters at most!");
-                let errorDetails = {
+                /*let errorDetails = {
                     field: 'comment',
                     error: 'input too long',
                     value: `${comment.value.length} characters`,
                     timestamp: Date.now()
                 }
-                form_errors.push(errorDetails);
+                form_errors.push(errorDetails);*/
             }
             else{
                 comment.setCustomValidity("");
@@ -138,13 +138,13 @@
                     error.classList.remove('fade');
                 },1500); //because 1.5s is the duration of the fade animation
     
-                let errorDetails = {
+                /*let errorDetails = {
                     field: 'comment',
                     error: 'illegal character typed',
                     character: comment.value[comment.value.length-1],
                     timestamp: Date.now()
                 }
-                form_errors.push(errorDetails);
+                form_errors.push(errorDetails);*/
             }
             else{
                 comment.setCustomValidity("");
@@ -173,6 +173,28 @@
     
         
         form.addEventListener("submit", (event) => {
+
+            let form_errors = [];
+
+            //email
+            if (!email.checkValidity()) {
+                form_errors.push({
+                field: "email",
+                error: email.validationMessage,
+                value: email.value,
+                timestamp: Date.now()
+                });
+            }
+
+            //comment
+            if (!comment.checkValidity()) {
+                form_errors.push({
+                field: "comment",
+                error: comment.validationMessage,
+                value: comment.value,
+                timestamp: Date.now()
+                });
+            }
             document.getElementById('form-errors').value = JSON.stringify(form_errors);
             console.log(form_errors);
         });
