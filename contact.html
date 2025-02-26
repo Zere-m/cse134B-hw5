@@ -4,6 +4,113 @@
     <title>Contact Me - Zere Mukanova</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="contact.css">
+
+    <script> 
+    const email = document.getElementById('email');
+    const comment = document.getElementById('comment');
+
+    const charCount = 0;
+    const maxChars = 1000;
+
+    const error = document.getElementById('error'); 
+    const info = document.getElementById('info');
+
+    const form = document.querySelector('form');
+
+    let form_errors = []; //let because it will be reassigned
+
+    email.addEventListener("input", (event) => {
+
+        if(email.validity.typeMismatch){
+            email.setCustomValidity("I am expecting a valid email address!");
+
+            let errorDetails = {
+                field: 'email',
+                error: 'illegal character typed',
+                value: email.value,
+                timestamp: Date.now()
+            }
+            form_errors.push(errorDetails);
+        }
+        else{
+            email.setCustomValidity("");
+        }
+    });
+
+    comment.addEventListener("input", (event) => {
+
+        if(comment.validity.tooShort){
+            comment.setCustomValidity("Message too short, I am expecting at least 20 characters!");
+            let errorDetails = {
+                field: 'comment',
+                error: 'input too short',
+                value: `${comment.value.length} characters`,
+                timestamp: Date.now()
+            }
+        }
+        else{
+            comment.setCustomValidity("");
+        }
+    });
+
+    comment.addEventListener("input", (event)=>{
+
+        if(comment.validity.tooLong){
+            comment.setCustomValidity("Message too long, I am expecting 1000 characters at most!");
+        }
+        else{
+            comment.setCustomValidity("");
+        }
+    });
+
+
+
+    comment.addEventListener("input", (event)=> {
+
+        if(comment.validity.patternMismatch){
+            comment.setCustomValidity("Illegal character typed, I am expecting only: (A-Z, a-z, 0-9, space, comma, period, exclamation mark, question mark, apostrophe, hyphen)!");
+            error.textContent = "Illegal character typed, I am expecting only: (A-Z, a-z, 0-9, space, comma, period, exclamation mark, question mark, apostrophe, hyphen)!";
+            error.classList.add('flash');
+
+            setTimeout(() => { //to remove the flash class after the animation ends
+                error.classList.remove('flash');
+                error.classList.add('fade');
+            }, 500); //because 0.5s is the duration of the flash animation
+            setTimeout(()=>{
+                error.textContent = "";
+                error.classList.remove('fade');
+            },1500); //because 1.5s is the duration of the fade animation
+        }
+        else{
+            comment.setCustomValidity("");
+            error.textContent = "";
+        }
+    });
+
+    comment.addEventListener("input", (event) => {
+
+        const length = comment.value.length;
+        const remaining = maxChars - length;
+
+        info.classList.remove('warning', 'danger');
+        info.textContent = `${remaining} characters remaining. Minimum 20 characters required. Maximum 1000 characters allowed.`;
+
+        if(remaining > 900){
+            info.classList.add('warning');
+        }
+        else if(remaining > 980){
+            info.classList.add('danger');
+        }
+        else if(remaining < 20){
+            info.classList.add('warning');
+        }
+    });
+
+    
+    form.addEventListener("submit", (event) => {
+        document.getElementById('form-errors').value = JSON.stringify(form_errors);
+    });
+    </script>
 </head>
 <body>
     <header>
@@ -36,11 +143,12 @@
                 
         
                 <label for="comment">Comment*:
-                    <input type="text" name="comment" rows="4" minlength = "20" maxlength="1000" pattern="^[A-Za-z0-9\s.,!?'-]+$" required></textarea>
+                    <input type="text" id="comment" rows="4" minlength = "20" maxlength="1000" pattern="^[A-Za-z0-9\s.,!?'-]+$" required></textarea>
                 </label>
                 
                 <input type = "hidden" name = "possible_bot" value = "true">
         
+                <input type = "hidden" id = "form-errors" name = "form-errors">
                 <output id="error" aria-live="assertive"></output>
                 <output id="info" aria-live="polite"></output>
         
