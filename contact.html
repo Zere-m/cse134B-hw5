@@ -71,6 +71,7 @@
     
         email.addEventListener("input", (event) => {
     
+            console.log("in email mismatch");
             if(email.validity.typeMismatch){
                 email.setCustomValidity("I am expecting a valid email address!");
     
@@ -90,6 +91,7 @@
         comment.addEventListener("input", (event) => {
     
             if(comment.validity.tooShort){
+                console.log("In comments too short");
                 comment.setCustomValidity("Message too short, I am expecting at least 20 characters!");
               /* let errorDetails = {
                     field: 'comment',
