@@ -1,13 +1,15 @@
 /* Default is light mode*/
 :root {
-    --background-color: #fff;
-    --text-color: #000;
-  }
-  
-  .dark-mode {
-    --background-color: #000;
-    --text-color: #fff;
-  }
+  --background-color: #fff;
+  --text-color: #000;
+  --section-bg: #fff;
+}
+
+.dark-mode {
+  --background-color: #000;
+  --text-color: #fff;
+  --section-bg: #333; 
+}
   
 body {
     background-color: var(--background-color);
