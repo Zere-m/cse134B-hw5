@@ -26,7 +26,7 @@ function renderProjects(projects) {
   
 //remote data loading using json
   function loadRemoteData() {
-    fetch('data/projectInfo.json') 
+    fetch('https://my-json-server.typicode.com/Zere-m/cse134B-hw5/projects')
       .then(response => response.json())
     .then(data => {
         //for future use just in case

@@ -4,14 +4,14 @@
         "id": 1,
         "name": "Health and Fitness Tracking",
         "description": "A web app to track your health goals.",
-        "image": "/Media/Images/fitness.jpg",
-        "link": "https://github.com/YourUsername/fitness-project"
+        "image": "/Media/Images/fitFuelPic.png",
+        "link": "https://github.com/YashRavipati1/CSE-110-Team3.git"
       },
       {
         "id": 2,
         "name": "Portfolio Redesign",
         "description": "An updated portfolio showcasing my projects.",
-        "image": "/Media/Images/portfolio.jpg",
+        "image": "/Media/Images/dashboardPic.png",
         "link": "https://yourportfolio.com"
       }
     ]
