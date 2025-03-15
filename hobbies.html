@@ -5,6 +5,17 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="hobbies.css">
     <link rel="stylesheet" href="globalStyles.css">
+
+    <style>
+      /*fade-in animation for image */
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+      }
+      @keyframes fadeIn {
+        to { opacity: 1; }
+      }
+    </style>
 </head>
 <body>
     <header>
@@ -26,7 +37,7 @@
             <header>
                 <h2>Crochet</h2>
             </header>
-            <p>I enjoy crochet because it allows me to relax while producing practical and/or decorative project. It gives me a sense of accomplishment.</p>
+            <p>I enjoy crochet because it allows me to relax while producing practical and/or decorative projects. It gives me a sense of accomplishment.</p>
             <aside>
                 <h3>Brief History of Crochet</h3>
                 <p>Crochet has been known since the early 19th century, originating from traditional practices in Iran, South America, and China. <cite>Source: Craft History Encyclopedia.</cite></p>
@@ -35,47 +46,46 @@
                 "Crochet is not only a craft but also an art form that transcends generations and cultures."
                 <cite>— Source Historian</cite>
             </blockquote>
-            <figure>
+            <!-- Added class "fade-in" to animate the image -->
+            <figure class="fade-in">
                 <picture>
                     <source media="(min-width: 650px)" srcset="crochet_large.jpg">
                     <source media="(min-width: 465px)" srcset="crochet_medium.jpg">
-                    <img src="/Media/Images/crochet-ducks.JPG" alt="A collection of crochet hooks and yarn">
+                    <img src="/Media/Images/crochet-ducks.JPG" alt="Crochet ducks">
                 </picture>
                 <figcaption>A crochet project picture as a placeholder</figcaption>
             </figure>
             <p>I started crocheting in <del>2020</del> <ins>2021</ins>, and it has since become a significant part of my free time.</p>
         </section>
+        
     </main>
     <noscript>Your browser does not support JavaScript!</noscript>
     <script>
-
         const btn = document.getElementById('dark-mode-toggle');
-            btn.addEventListener('click', function() {
-                console.log('toggle clicked');
-                document.body.classList.toggle('dark-mode');
-                if(btn.innerHTML === '🌙') {
-                    btn.innerHTML = '&#9788';
-                    localStorage.setItem('theme', 'light');
-
-                } else {
-                    btn.innerHTML = '🌙';
-                    localStorage.setItem('theme', 'dark');
-                }
-            }); 
-
+        btn.addEventListener('click', function() {
+            console.log('toggle clicked');
+            document.body.classList.toggle('dark-mode');
+            if(btn.innerHTML === '🌙') {
+                btn.innerHTML = '&#9788';
+                localStorage.setItem('theme', 'light');
+            } else {
+                btn.innerHTML = '🌙';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+        
         document.addEventListener('DOMContentLoaded', () => {
-      const currentTheme = localStorage.getItem('theme') || 'light';
-      if (currentTheme === 'dark') {
-        document.documentElement.classList.add('dark-mode');
-      }
-    });
-
-    
-    btn.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark-mode');
-      const newTheme = document.documentElement.classList.contains('dark-mode') ? 'dark' : 'light';
-      localStorage.setItem('theme', newTheme);
-    });
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            if (currentTheme === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            }
+        });
+        
+        btn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark-mode');
+            const newTheme = document.documentElement.classList.contains('dark-mode') ? 'dark' : 'light';
+            localStorage.setItem('theme', newTheme);
+        });
     </script>
 </body>
 </html>

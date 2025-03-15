@@ -1,1 +1,2 @@
 # 134B-personal-website
+I updated the hobbies page to improve user experience and visual appeal. Enhancements include a fade-in animation for the hobby image, refined typography for better readability, and a more responsive layout for mobile devices.
