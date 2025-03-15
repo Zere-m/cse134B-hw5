@@ -1,0 +1,19 @@
+{
+    "projects": [
+      {
+        "id": 1,
+        "name": "Health and Fitness Tracking",
+        "description": "A web app to track your health goals.",
+        "image": "/Media/Images/fitness.jpg",
+        "link": "https://github.com/YourUsername/fitness-project"
+      },
+      {
+        "id": 2,
+        "name": "Portfolio Redesign",
+        "description": "An updated portfolio showcasing my projects.",
+        "image": "/Media/Images/portfolio.jpg",
+        "link": "https://yourportfolio.com"
+      }
+    ]
+  }
+  

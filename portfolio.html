@@ -22,72 +22,52 @@
         </nav>
     </header>
     <main>
-        <section>
-            <header>
-                <h2>Health and Fitness Tracking Website</h2>
-            </header>
-            <p><a href="https://github.com/YashRavipati1/CSE-110-Team3.git">View this project on GitHub</a></p>
-            <video controls>
-                <source src="/Media/CSE110-mealTracking.mov" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <h3>Technologies Used</h3>
-            <table>
-                <caption>Technologies Detail</caption>
-                <thead>
-                    <tr>
-                        <th>Technology</th>
-                        <th>Definition</th>
-                        <th>Usage in Project</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>React</td>
-                        <td>A JavaScript library for building user interfaces.</td>
-                        <td>Used to build the dynamic components of the fitness tracking interface.</td>
-                    </tr>
-                    <!-- other technologies add later -->
-                </tbody>
-            </table>
-            
-            <h3>Motivation Behind the Project:</h3>
-            <p>This project was work of a team of 5 people taking CSE 110 - Software Engineering at UCSD. It was inspired by the need to provide a user-friendly platform for individuals to track their health and fitness goals effectively.</p>
-            
-            <h3>Lessons Learned</h3>
-            <p>Throughout this project, I learned about the complexities of state management in React and the importance of user experience design in software enginnering.</p>
+        <!-- projct cards -->
+        <section id="projects-section">
+            <h1>My Projects</h1>
+            <div id="projects-container">
+
+            <project-card
+                project-name="Demo Project"
+                description="Hardcoded card example for part A of hw5"
+                image-url="Media/Images/picError.webp"
+                link-url="https://example.com">
+            </project-card>
+            </div>
+            <!--buttons for part2 -->
+            <button id="load-local">Load Local</button>
+            <button id="load-remote">Load Remote</button>
         </section>
     </main>
     <noscript>Your browser does not support JavaScript!</noscript>
-    <script>
-
-        const btn = document.getElementById('dark-mode-toggle');
-            btn.addEventListener('click', function() {
-                console.log('toggle clicked');
-                document.body.classList.toggle('dark-mode');
-                if(btn.innerHTML === '🌙') {
-                    btn.innerHTML = '&#9788';
-                    localStorage.setItem('theme', 'light');
-
-                } else {
-                    btn.innerHTML = '🌙';
-                    localStorage.setItem('theme', 'dark');
-                }
-            });
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const currentTheme = localStorage.getItem('theme') || 'light';
-      if (currentTheme === 'dark') {
-        document.documentElement.classList.add('dark-mode');
-      }
-    });
-
     
-    btn.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark-mode');
-      const newTheme = document.documentElement.classList.contains('dark-mode') ? 'dark' : 'light';
-      localStorage.setItem('theme', newTheme);
-    });
+    <script src="customElement.js" defer></script>
+   <<script src="dataLoad.js" defer></script>
+    
+    <script>
+      const btn = document.getElementById('dark-mode-toggle');
+      btn.addEventListener('click', function() {
+          console.log('toggle clicked');
+          document.body.classList.toggle('dark-mode');
+          if(btn.innerHTML === '🌙') {
+              btn.innerHTML = '&#9788';
+              localStorage.setItem('theme', 'light');
+          } else {
+              btn.innerHTML = '🌙';
+              localStorage.setItem('theme', 'dark');
+          }
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+          document.documentElement.classList.add('dark-mode');
+        }
+      });
+      btn.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark-mode');
+        const newTheme = document.documentElement.classList.contains('dark-mode') ? 'dark' : 'light';
+        localStorage.setItem('theme', newTheme);
+      });
     </script>
 </body>
 </html>

@@ -1,0 +1,15 @@
+[
+    {
+      "name": "Health and fitness tracking: FitFuel",
+      "description": "A web app that tracks your health and fitness goals, provding nutrition and exercise recommendations.",
+      "image": "/Media/Images/fitFuelPic.png",
+      "link": "https://github.com/YashRavipati1/CSE-110-Team3.git"
+    },
+    {
+      "name": "Clinical trial data analysis",
+      "description": "An enhanced portfolio showcasing various clinical trial datasets.",
+      "image": "/Media/Images/dashboardPic.png",
+      "link": "none"
+    }
+  ]
+  
